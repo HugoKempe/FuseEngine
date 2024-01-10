@@ -1,7 +1,26 @@
 #include "FuseEngine.h"
 
-int main()
+class Sandbox : public Fuse::Application
 {
-	Fuse::Log::Init();
-	Fuse::Log::Debug("Hello, World");
+public:
+	Sandbox(const Fuse::ApplicationSpecification& specification)
+		: Application(specification)
+	{
+		FE_DEBUG("SANDBOX Created!");
+	}
+
+	~Sandbox()
+	{
+		FE_DEBUG("SANDBOX Destroyed!");
+	}
+};
+
+Fuse::Application* Fuse::CreateApplication(ApplicationCommandLineArgs args)
+{
+	ApplicationSpecification spec;
+	spec.Name = "Sandbox";
+	spec.WorkingDirectory = "";
+	spec.CommandLineArgs = args;
+
+	return new Sandbox(spec);
 }
