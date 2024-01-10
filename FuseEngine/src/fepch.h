@@ -7,7 +7,7 @@
 	#endif
 #endif
 
-#define IMGUI_USER_CONFIG "fb/imgui/ImGuiConfig.h"
+#define IMGUI_USER_CONFIG "FuseEngine/ImGui/ImGuiConfig.h"
 
 #include <iostream>
 #include <memory>

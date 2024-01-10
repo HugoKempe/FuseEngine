@@ -7,6 +7,8 @@ int main(int argc, char** argv);
 
 namespace Fuse
 {
+	class ImGuiLayer;
+
 	struct ApplicationCommandLineArgs
 	{
 		int Count = 0;
@@ -42,7 +44,7 @@ namespace Fuse
 
 		static Application& Get() { return *s_Instance; }
 
-		const Ref<Window>& GetWindow() const { return m_Window; }
+		const Window& GetWindow() const { return *m_Window; }
 
 		const ApplicationSpecification& GetSpecification() const { return m_Specification; }
 
@@ -55,6 +57,7 @@ namespace Fuse
 	private:
 		ApplicationSpecification m_Specification;
 		Ref<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = false;
 		bool m_Suspended = false;
 		bool m_Minimized = false;

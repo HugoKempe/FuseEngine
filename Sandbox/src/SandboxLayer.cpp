@@ -1,5 +1,7 @@
 ﻿#include "SandboxLayer.h"
 
+#include "imgui.h"
+
 SandboxLayer::SandboxLayer()
 	: Layer("Sandbox")
 {
@@ -16,8 +18,8 @@ void SandboxLayer::OnDetach()
 
 void SandboxLayer::OnUpdate(float delta)
 {
-	m_Color.r = Fuse::Input::GetMouseX() / (float)Fuse::Application::Get().GetWindow()->GetWidth();
-	m_Color.b = Fuse::Input::GetMouseY() / (float)Fuse::Application::Get().GetWindow()->GetHeight();
+	m_Color.r = Fuse::Input::GetMouseX() / (float)Fuse::Application::Get().GetWindow().GetWidth();
+	m_Color.b = Fuse::Input::GetMouseY() / (float)Fuse::Application::Get().GetWindow().GetHeight();
 
 	Fuse::Renderer::SetClearColor(m_Color);
 }
@@ -28,6 +30,11 @@ void SandboxLayer::OnTick()
 
 void SandboxLayer::OnImGuiRender()
 {
+	static int pressCount = 0;
+	ImGui::Begin("Properties");
+	if (ImGui::Button(fmt::format("You Pressed me {} times!", pressCount).c_str()))
+		pressCount++;
+	ImGui::End();
 }
 
 void SandboxLayer::OnEvent(Fuse::Event& event)

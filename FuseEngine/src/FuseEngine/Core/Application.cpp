@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "FuseEngine/Event/ApplicationEvent.h"
 #include "FuseEngine/Graphics/Renderer.h"
+#include "FuseEngine/ImGui/ImGuiLayer.h"
 
 //TODO: put in separate timer class
 #include "GLFW/glfw3.h"
@@ -30,6 +31,9 @@ namespace Fuse
 		m_Window->SetEventCallback([this](auto& e) { return this->OnEventInternal(e); });
 
 		Renderer::Init();
+
+		m_ImGuiLayer = new ImGuiLayer();
+		PushOverlay(m_ImGuiLayer);
 	}
 
 	Application::~Application()
@@ -103,10 +107,11 @@ namespace Fuse
 				for (Layer* layer : m_LayerStack)
 					layer->OnUpdate(timestep);
 				Renderer::End();
-				//m_ImGuiLayer->Begin();
-				//for (Layer* layer : m_LayerStack)
-				//	layer->OnImGuiRender();
-				//m_ImGuiLayer->End();
+
+				m_ImGuiLayer->Begin();
+				for (Layer* layer : m_LayerStack)
+					layer->OnImGuiRender();
+				m_ImGuiLayer->End();
 
 				frames++;
 			}
