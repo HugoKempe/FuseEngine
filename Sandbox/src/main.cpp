@@ -1,4 +1,5 @@
 #include "FuseEngine.h"
+#include "SandboxLayer.h"
 
 class Sandbox : public Fuse::Application
 {
@@ -7,6 +8,8 @@ public:
 		: Application(specification)
 	{
 		FE_DEBUG("SANDBOX Created!");
+		SandboxLayer* layer = new SandboxLayer();
+		PushLayer(layer);
 	}
 
 	~Sandbox()
