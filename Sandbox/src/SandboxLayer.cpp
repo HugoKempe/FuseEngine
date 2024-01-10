@@ -1,6 +1,7 @@
 ﻿#include "SandboxLayer.h"
 
 #include "imgui.h"
+#include "imgui-addons/DearWidgets/demo/demo.h"
 
 SandboxLayer::SandboxLayer()
 	: Layer("Sandbox")
@@ -35,6 +36,8 @@ void SandboxLayer::OnImGuiRender()
 	if (ImGui::Button(fmt::format("You Pressed me {} times!", pressCount).c_str()))
 		pressCount++;
 	ImGui::End();
+
+	ImWidgets::ShowDemo();
 }
 
 void SandboxLayer::OnEvent(Fuse::Event& event)

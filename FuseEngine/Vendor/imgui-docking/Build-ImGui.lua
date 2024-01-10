@@ -10,6 +10,8 @@ project "ImGui-Docking"
 	-- Addons relative to folder
 	Addons = {}
 	Addons["TextEditor"] = "addons/ImGuiColorTextEdit/src/**"
+	Addons["DearWidgets"] = "imgui-addons/DearWidgets/**"
+
 
 	files
 	{
@@ -30,7 +32,7 @@ project "ImGui-Docking"
 		-- "examples/imgui_impl_opengl3.cpp"
 
 		-- addons
-		"%{Addons.TextEditor}",
+		"%{Addons.DearWidgets}",
 	}
 
 	filter "system:windows"
