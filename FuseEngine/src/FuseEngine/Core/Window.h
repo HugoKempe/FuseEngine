@@ -54,7 +54,7 @@ namespace Fuse
 		uint32_t GetPosY() const { return m_Data.PosY; }
 		void SetPosition(uint32_t x, uint32_t y);
 
-		bool ShouldClose() const;
+		inline void* GetNativeWindow() const { return m_Window; }
 
 		static Ref<Window> Create(const WindowProperties& properties = WindowProperties());
 	private:

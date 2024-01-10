@@ -42,6 +42,8 @@ namespace Fuse
 
 		static Application& Get() { return *s_Instance; }
 
+		const Ref<Window>& GetWindow() const { return m_Window; }
+
 		const ApplicationSpecification& GetSpecification() const { return m_Specification; }
 
 		static std::string GetBuildConfiguration();

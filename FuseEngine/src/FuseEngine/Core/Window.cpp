@@ -74,11 +74,6 @@ namespace Fuse
 		glfwSetWindowPos(m_Window, (int)x, (int)y);
 	}
 
-	bool Window::ShouldClose() const
-	{
-		return glfwWindowShouldClose(m_Window);
-	}
-
 	Ref<Window> Window::Create(const WindowProperties& properties)
 	{
 		return CreateRef<Window>(properties);

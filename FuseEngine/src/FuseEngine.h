@@ -6,8 +6,7 @@
 #include "FuseEngine/Core/Application.h"
 #include "FuseEngine/Core/Log.h"
 #include "FuseEngine/Core/Assert.h"
-#include "FuseEngine/Core/KeyCodes.h"
-#include "FuseEngine/Core/MouseCodes.h"
+#include "FuseEngine/Core/Input.h"
 // -----------------------------------
 
 // ---Layer---------------------------
