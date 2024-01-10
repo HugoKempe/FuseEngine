@@ -6,7 +6,6 @@
 #include "FuseEngine/Core/Application.h"
 #include "FuseEngine/Core/Log.h"
 #include "FuseEngine/Core/Assert.h"
-#include "FuseEngine/Core/EntryPoint.h"
 #include "FuseEngine/Core/KeyCodes.h"
 #include "FuseEngine/Core/MouseCodes.h"
 // -----------------------------------
@@ -17,7 +16,7 @@
 
 // ---Graphics------------------------
 #include "FuseEngine/Graphics/Renderer.h"
-//#include "FuseEngine/Graphics/Color.h"
+#include "FuseEngine/Graphics/Color.h"
 // -----------------------------------
 
 // ---Event---------------------------

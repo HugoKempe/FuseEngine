@@ -14,5 +14,5 @@ public:
 	void OnImGuiRender() override;
 	void OnEvent(Fuse::Event& event) override;
 private:
-	//Fuse::Color m_Color;
+	Fuse::Color m_Color;
 };

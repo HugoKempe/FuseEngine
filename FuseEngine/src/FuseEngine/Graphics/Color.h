@@ -39,7 +39,7 @@ namespace Fuse
 
 		float r = 0.0f, g = 0.0f, b = 0.0f, a = 1.0f;
 
-		//operator glm::vec4() const { return { r, g, b, a }; }
+		operator glm::vec4() const { return { r, g, b, a }; }
 		operator ColorConstants() const
 		{
 			return r > b ? Red : Blue;

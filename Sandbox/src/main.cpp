@@ -1,4 +1,5 @@
 #include "FuseEngine.h"
+#include "FuseEngine/Core/EntryPoint.h"
 #include "SandboxLayer.h"
 
 class Sandbox : public Fuse::Application
